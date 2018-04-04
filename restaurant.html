@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,13 +15,17 @@
 <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
-    <nav>
+    <!-- adding  role="navigation" in order to read the aria-label -->
+    <nav aria-label="Main Menu"  role="navigation">
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
+    <!-- https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html -->
+    <nav aria-label="Breadcrumb"  role="navigation" class="breadcrumb-nav">
+      <ul id="breadcrumb" >
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
     <a href="#skip-map" class="skip-map">Skip Map</a>

@@ -18,7 +18,7 @@ p{
 body {
   background-color: #fdfdfd;
   margin: 0;
-  position:relative;
+  position: relative;
 }
 
 ul,
@@ -29,12 +29,12 @@ li {
 }
 
 a {
-  color: orange;
+  color: #77d574;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: #3397db;
+  color: #66c363;
   text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ object{
 
 table{
   border-spacing: 0;
-  width:100%
+  width: 100%
 }
 
 #main-content {
@@ -86,13 +86,17 @@ table{
 }
 
 #footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: #252831;
+  color: #fff;
   font-size: 9pt;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+}
+
+#footer a{
+  padding: 16px 0;
 }
 
 /* ====================== Navigation ====================== */
@@ -114,14 +118,20 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 5px;
   text-transform: uppercase;
+  padding: 12px 0;
 }
-
+.breadcrumb-nav{
+  width: 100%;
+  height: auto;
+  background-color:transparent;
+  text-align: left;
+}
 .skip-map{
   position: fixed;
   top: -99px;
   z-index: 1001;
-  color: #fff;
-  background-color: #f18200 ;
+  color: #000;
+  background-color: #00d3c5 ;
   padding: 5px 10px;
   font-size: 14px;
   left: 10px;
@@ -129,7 +139,8 @@ nav h1 a {
 
 .skip-map:focus{
   top: 10px;
-  color: #fff;
+  color: #000;
+  box-shadow: 0px 0px 3px 3px #fff;
 }
 
 #breadcrumb {
@@ -155,8 +166,9 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-  color: #0275d8;
+  color: #64481d;
   text-decoration: none;
+  padding: 12px;
 }
 
 /* Add a color on mouse-over */
@@ -180,7 +192,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  background-color: #3397DB;
+  background-color: #01605a;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +219,12 @@ nav h1 a {
   flex-basis: 100%;
 }
 
+#restaurants-list li a:focus,
+.filter-options select:focus {
+  outline: 0;
+  box-shadow: 0px 0px 3px 3px #ffff00;
+}
+
 .filter-options label{
   display: none;
 }
@@ -221,6 +239,7 @@ nav h1 a {
   display: flex;
   flex-wrap: wrap;
   max-width: 1400px;
+  justify-content: center;
 }
 
 #restaurants-list li {
@@ -237,6 +256,7 @@ nav h1 a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 450px;
 }
 
 #restaurants-list .restaurant-img {
@@ -251,7 +271,7 @@ nav h1 a {
 }
 
 #restaurants-list li h1 {
-  color: #f18200;
+  color: #01605a;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -267,8 +287,7 @@ nav h1 a {
 }
 
 #restaurants-list li a {
-  background-color: orange;
-  border-bottom: 3px solid #eee;
+  background-color: #01605a;
   color: #fff;
   display: inline-block;
   font-size: 11pt;
@@ -280,6 +299,9 @@ nav h1 a {
   width: 100%;
 }
 
+#restaurants-list li a:hover{
+  background-color: #004440;
+}
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -302,7 +324,7 @@ nav h1 a {
 }
 
 #restaurant-name {
-  color: #f18200;
+  color: #105f0d;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
@@ -352,7 +374,7 @@ nav h1 a {
   max-width: 1400px;
 }
 #reviews-container h2 {
-  color: #f58500;
+  color: #105f0d;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;
@@ -397,7 +419,7 @@ nav h1 a {
 }
 
 #reviews-list .header-review p:nth-child(2){
-  color: #ccc;
+  color: #e0e0e0;
   font-size: 13px;
   margin-top: 4px;
   text-align: right;
@@ -406,10 +428,13 @@ nav h1 a {
 #reviews-list .rating-review{
   display: inline-block;
   margin-top: 12px;
-  background: #f58500;
+  background: #105f0d;
   padding: 5px 11px;
   font-size: 14px;
   color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 
 #reviews-list li p {
@@ -422,7 +447,7 @@ nav h1 a {
 
 #restaurant-hours td ,
 #restaurant-hours th {
-  color: #666;
+  color: #333;
   margin: 0;
   padding: 5px 10px;
   font-size: 14px;
@@ -430,17 +455,17 @@ nav h1 a {
 }
 
 #restaurant-hours th {
-  color: #f18200;
+  color: #105f0d;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 700px){
   nav h1 a {
     font-size: 14pt;
     letter-spacing: 10px;
   }
 
   #restaurants-list li {
-    flex-basis:calc(50% - 30px) ;
+    flex-basis: calc(50% - 30px) ;
   }
 
   .filter-options select{
