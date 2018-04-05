@@ -56,10 +56,18 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.className = 'restaurant-img';
   image.alt = restaurant.name;
   image.title = restaurant.name;
+
+  const path = DBHelper.imageUrlForRestaurant(restaurant);
+  const filenameIndex = path.lastIndexOf("/") + 1;
+  const fileExtIndex = path.lastIndexOf(".");
+  const filename = path.substring(filenameIndex,fileExtIndex);
+
+  image.src  = `/new_img/${filename}.jpg`;
+  //depending on dpi since images are never above 400px
+  image.setAttribute('srcset', `/new_img/${filename}-800.jpg 2x, /new_img/${filename}.jpg 1x`);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;

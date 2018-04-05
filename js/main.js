@@ -140,9 +140,17 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt = restaurant.name;
   image.title = restaurant.name;
+
+  const path = DBHelper.imageUrlForRestaurant(restaurant);
+  const filenameIndex = path.lastIndexOf("/") + 1;
+  const fileExtIndex = path.lastIndexOf(".");
+  const filename = path.substring(filenameIndex,fileExtIndex);
+
+  image.src  = `/new_img/${filename}.jpg`;
+  //depending on dpi since images are never above 400px
+  image.setAttribute('srcset', `/new_img/${filename}-800.jpg 2x, /new_img/${filename}.jpg 1x`);
   li.append(image);
 
   const name = document.createElement('h1');
