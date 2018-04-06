@@ -36,8 +36,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 function servePhoto(request) {
-   // var storageUrl = request.url.replace(/-\d+px\.jpg$/, '');
-
+    
     return caches.open(imgsCache).then(function(cache) {
         return cache.match(request.url).then(function(response) {
             if (response) return response;
