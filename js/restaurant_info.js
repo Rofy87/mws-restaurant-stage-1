@@ -67,7 +67,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   image.src  = `/new_img/${filename}.jpg`;
   //depending on dpi since images are never above 400px
-  image.setAttribute('srcset', `/new_img/${filename}-800.jpg 2x, /new_img/${filename}.jpg 1x`);
+  image.setAttribute('srcset', `/new_img/${filename}_800.jpg 2x, /new_img/${filename}.jpg 1x`);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
