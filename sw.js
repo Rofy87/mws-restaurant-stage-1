@@ -6,6 +6,7 @@ const urlsToCache = [
     '/js/main.js',
     '/js/restaurant_info.js',
     '/js/dbhelper.js',
+    '/js/register_sw.js',
     '/data/restaurants.json',
     '/index.html',
     'restaurant.html'
@@ -36,7 +37,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 function servePhoto(request) {
-    
+
     return caches.open(imgsCache).then(function(cache) {
         return cache.match(request.url).then(function(response) {
             if (response) return response;
